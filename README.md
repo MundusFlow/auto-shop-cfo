@@ -25,6 +25,4 @@ Flow, Profit & Loss, Settings). The `images/` folder holds two product
 screenshots (Dashboard, Repair Orders) generated from a sample-data copy of
 the real workbook.
 
-**Not yet wired up**: the CTA button and sticky bar currently point at a
-placeholder `mailto:you@example.com` link — replace with a real checkout link
-once pricing and payment delivery are set up.
+The CTA button and sticky bar link to the live Stripe Payment Link for checkout.
