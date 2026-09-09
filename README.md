@@ -1,9 +1,9 @@
 # Auto Shop CFO — Free Calculators
 
-A static, client-side calculator page for auto repair shops, in the same
-style as [Electrician Business CFO](https://mundusflow.github.io/electrician-business-cfo/)
-and [Freelance Tax & Runway Estimator](https://mundusflow.github.io/freelance-tax-runway-estimator/).
-Plain HTML, CSS, and JavaScript — no build step, no backend, no data leaves the browser.
+Live at [mundusflow.github.io/auto-shop-cfo](https://mundusflow.github.io/auto-shop-cfo/)
+
+A static, client-side calculator page for auto repair shops. Plain HTML,
+CSS, and JavaScript — no build step, no backend, no data leaves the browser.
 
 ## Calculators
 
@@ -15,8 +15,7 @@ Plain HTML, CSS, and JavaScript — no build step, no backend, no data leaves th
 
 ## Deploying
 
-Push this folder to a new GitHub repo and serve with GitHub Pages
-(Settings → Pages → deploy from the `main` branch), same as the other two projects.
+Served via GitHub Pages (Settings → Pages → deploy from the `main` branch).
 
 ## The paid workbook
 
@@ -28,7 +27,4 @@ the real workbook.
 
 **Not yet wired up**: the CTA button and sticky bar currently point at a
 placeholder `mailto:you@example.com` link — replace with a real checkout link
-once pricing and payment delivery are set up (see the Electrician Business
-CFO project for the Stripe + Cloudflare Worker + R2 pattern already built
-for that product, which can be extended to a third product the same way the
-Freelance CFO was added).
+once pricing and payment delivery are set up.
