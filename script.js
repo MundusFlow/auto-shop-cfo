@@ -318,6 +318,18 @@ const num = (el) => parseFloat(el.value) || 0;
 })();
 
 // ---------------------------------------------------------------------------
+// Free Repair Order Tracker signup (MailerLite embed).
+// ---------------------------------------------------------------------------
+const freeTrackerSubmit = document.getElementById("freeTrackerSubmit");
+if (freeTrackerSubmit) {
+  freeTrackerSubmit.addEventListener("click", () => {
+    if (typeof gtag === "function") {
+      gtag("event", "free_tracker_signup_click");
+    }
+  });
+}
+
+// ---------------------------------------------------------------------------
 // Sticky bottom CTA bar: stays hidden until the visitor scrolls past the
 // hero or runs any calculator, so the first screen isn't a sales pitch.
 // ---------------------------------------------------------------------------
