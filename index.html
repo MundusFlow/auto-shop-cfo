@@ -153,11 +153,13 @@
     <div class="card" id="quote-builder">
       <h2>Quote Builder</h2>
       <p>Build a repair estimate that actually covers your costs and pays you.</p>
+      <p class="privacy-note">&#128274; Runs entirely in your browser &mdash; nothing you enter is sent or stored.</p>
+      <button type="button" class="clear-link" id="q_clearBtn">Clear and enter your own numbers</button>
 
       <label for="q_parts">Parts cost</label>
       <div class="input-group">
         <span class="input-prefix">$</span>
-        <input type="number" id="q_parts" placeholder="0">
+        <input type="number" id="q_parts" value="150" placeholder="0">
       </div>
 
       <label for="q_partsMarkup">Markup on parts</label>
@@ -168,75 +170,95 @@
       </div>
 
       <label for="q_laborHours">Estimated labor hours</label>
-      <input type="number" id="q_laborHours" placeholder="0">
+      <input type="number" id="q_laborHours" value="2.5" placeholder="0">
 
       <label for="q_laborRate">Labor rate (per hour)</label>
       <div class="input-group">
         <span class="input-prefix">$</span>
-        <input type="number" id="q_laborRate" placeholder="0">
+        <input type="number" id="q_laborRate" value="95" placeholder="0">
       </div>
 
       <label for="q_supplies">Shop supplies / fees</label>
       <div class="input-group">
         <span class="input-prefix">$</span>
-        <input type="number" id="q_supplies" placeholder="0">
+        <input type="number" id="q_supplies" value="15" placeholder="0">
       </div>
 
       <label for="q_profitMargin">Target profit margin</label>
       <p class="field-hint">Extra buffer on top of cost + labor for profit and the unexpected.</p>
       <div class="input-group input-group-suffix">
-        <input type="number" id="q_profitMargin" value="15">
+        <input type="number" id="q_profitMargin" value="50">
         <span class="input-suffix">%</span>
       </div>
 
       <button id="quoteBtn">Calculate Quote</button>
 
       <div id="quoteResult" class="result"></div>
+
+      <p class="section-divider">About This Quote Builder</p>
+      <div class="calc-explainer">
+        <p>A repair estimate that only covers your parts and labor is really just a break-even price &mdash; it pays your bills but not you. This calculator adds a profit buffer on top of your true costs, so every quote you hand a customer already has your margin built in before you ever pick up a wrench.</p>
+        <p>Parts markup and labor are kept separate for a reason: parts markup covers the time and risk of sourcing, ordering, and stocking components, while labor is priced on the hours you'll actually spend on the vehicle. Blending the two into one number makes it easy to underprice labor-heavy jobs and overprice parts-heavy ones.</p>
+        <p>A common question shop owners search for is &ldquo;how much should I charge for a repair?&rdquo; &mdash; the honest answer is: your real cost, plus enough margin to cover the jobs that run long, the comebacks, and the slow weeks. A 15% buffer is a starting point, not a rule; shops with more overhead or more warranty comebacks often need 20-25%.</p>
+        <p>Tip: run last month's five biggest repair orders back through this calculator with your actual parts and hours. If your real invoiced total was lower than what this tool recommends, you were underpricing those jobs without knowing it.</p>
+      </div>
     </div>
 
     <div class="card" id="job-profit">
       <h2>Job Profit Calculator</h2>
       <p>See what a finished repair order actually made you, after every cost.</p>
+      <p class="privacy-note">&#128274; Runs entirely in your browser &mdash; nothing you enter is sent or stored.</p>
+      <button type="button" class="clear-link" id="jp_clearBtn">Clear and enter your own numbers</button>
 
       <label for="jp_invoiced">Amount invoiced / collected</label>
       <div class="input-group">
         <span class="input-prefix">$</span>
-        <input type="number" id="jp_invoiced" placeholder="0">
+        <input type="number" id="jp_invoiced" value="650" placeholder="0">
       </div>
 
       <label for="jp_parts">Parts cost</label>
       <div class="input-group">
         <span class="input-prefix">$</span>
-        <input type="number" id="jp_parts" placeholder="0">
+        <input type="number" id="jp_parts" value="90" placeholder="0">
       </div>
 
       <label for="jp_labor">Technician labor cost</label>
       <p class="field-hint">What you paid out in wages for this job, not what you billed.</p>
       <div class="input-group">
         <span class="input-prefix">$</span>
-        <input type="number" id="jp_labor" placeholder="0">
+        <input type="number" id="jp_labor" value="150" placeholder="0">
       </div>
 
       <label for="jp_other">Other costs</label>
       <p class="field-hint">Sublet, shop supplies, payment fees, warranty/rework, etc.</p>
       <div class="input-group">
         <span class="input-prefix">$</span>
-        <input type="number" id="jp_other" placeholder="0">
+        <input type="number" id="jp_other" value="40" placeholder="0">
       </div>
 
       <button id="jobProfitBtn">Calculate Job Profit</button>
 
       <div id="jobProfitResult" class="result"></div>
+
+      <p class="section-divider">About This Job Profit Calculator</p>
+      <div class="calc-explainer">
+        <p>Winning the sale isn't the same as making money. This calculator answers the question every shop owner should ask after closing out a repair order: after parts, labor, and the small stuff, did this job actually pay?</p>
+        <p>&ldquo;Other costs&rdquo; matters more than it looks &mdash; sublet work, shop supplies, credit card fees, and warranty comebacks quietly eat into margin on jobs that looked profitable on the invoice. Leaving them out is the most common reason a shop's real profit runs lower than what the owner expects.</p>
+        <p>Margin, not just dollar profit, is what tells you whether a job type is worth repeating. A $400 profit on a $2,000 transmission job (20% margin) is a different result than $400 profit on a $500 brake job (80% margin) &mdash; the second is a far better use of your bay time.</p>
+        <p>If a job comes back under 15% margin, don't just shrug it off &mdash; go back to what you quoted with the Quote Builder above and see where the estimate and reality diverged.</p>
+      </div>
     </div>
 
     <div class="card" id="labor-rate">
       <h2>Labor Rate Calculator</h2>
       <p>Work out the minimum you need to charge per billable hour.</p>
+      <p class="privacy-note">&#128274; Runs entirely in your browser &mdash; nothing you enter is sent or stored.</p>
+      <button type="button" class="clear-link" id="hr_clearBtn">Clear and enter your own numbers</button>
 
       <label for="hr_takeHome">Desired annual profit</label>
       <div class="input-group">
         <span class="input-prefix">$</span>
-        <input type="number" id="hr_takeHome" placeholder="0">
+        <input type="number" id="hr_takeHome" value="70000" placeholder="0">
       </div>
 
       <p class="section-divider">Monthly overhead</p>
@@ -246,28 +268,28 @@
           <label for="hr_rent">Rent</label>
           <div class="input-group">
             <span class="input-prefix">$</span>
-            <input type="number" id="hr_rent" placeholder="0">
+            <input type="number" id="hr_rent" value="2000" placeholder="0">
           </div>
         </div>
         <div>
           <label for="hr_insurance">Insurance</label>
           <div class="input-group">
             <span class="input-prefix">$</span>
-            <input type="number" id="hr_insurance" placeholder="0">
+            <input type="number" id="hr_insurance" value="500" placeholder="0">
           </div>
         </div>
         <div>
           <label for="hr_equipment">Equipment &amp; tools</label>
           <div class="input-group">
             <span class="input-prefix">$</span>
-            <input type="number" id="hr_equipment" placeholder="0">
+            <input type="number" id="hr_equipment" value="750" placeholder="0">
           </div>
         </div>
         <div>
           <label for="hr_software">Software</label>
           <div class="input-group">
             <span class="input-prefix">$</span>
-            <input type="number" id="hr_software" placeholder="0">
+            <input type="number" id="hr_software" value="250" placeholder="0">
           </div>
         </div>
       </div>
@@ -275,14 +297,14 @@
       <label for="hr_otherOverhead">Other overhead</label>
       <div class="input-group">
         <span class="input-prefix">$</span>
-        <input type="number" id="hr_otherOverhead" placeholder="0">
+        <input type="number" id="hr_otherOverhead" value="250" placeholder="0">
       </div>
 
       <p class="section-divider">Billable time</p>
 
       <label for="hr_hoursPerWeek">Billable hours per week</label>
       <p class="field-hint">Hours actually billed to customers, not total hours worked.</p>
-      <input type="number" id="hr_hoursPerWeek" placeholder="0">
+      <input type="number" id="hr_hoursPerWeek" value="28" placeholder="0">
 
       <label for="hr_weeksPerYear">Weeks worked per year</label>
       <input type="number" id="hr_weeksPerYear" value="50">
@@ -290,28 +312,38 @@
       <button id="hourlyRateBtn">Calculate My Rate</button>
 
       <div id="hourlyRateResult" class="result"></div>
+
+      <p class="section-divider">About This Labor Rate Calculator</p>
+      <div class="calc-explainer">
+        <p>Most shops set their labor rate by asking what the shop down the street charges. That tells you what the market will bear, not whether your own rate covers your own bills. This calculator works backward from your overhead and desired profit to your true minimum rate.</p>
+        <p>Billable hours &mdash; not hours the shop is open &mdash; is the number that matters here. A tech who's at the shop 40 hours a week but only billing 26 of them (the rest lost to admin, waiting on parts, and comebacks) means your real rate needs to be higher than a naive &ldquo;overhead &divide; 40 hours&rdquo; calculation would suggest.</p>
+        <p>Overhead creeps. Rent, insurance, equipment payments, and software subscriptions are easy to forget individually but add up to a meaningful chunk of what every billable hour needs to cover. Reviewing this list once a quarter catches rate drift before it becomes a real problem.</p>
+        <p>This number is your floor, not your target. Once you know the minimum, you can decide &mdash; based on your specialty, reputation, and local market &mdash; how much above it you actually want to charge.</p>
+      </div>
     </div>
 
     <div class="card" id="tax-reserve">
       <h2>Tax Reserve Calculator</h2>
       <p>Estimate self-employment tax and income tax separately, not just a flat guess.</p>
+      <p class="privacy-note">&#128274; Runs entirely in your browser &mdash; nothing you enter is sent or stored.</p>
+      <button type="button" class="clear-link" id="tax_clearBtn">Clear and enter your own numbers</button>
 
       <label for="tax_income">Income this period</label>
       <div class="input-group">
         <span class="input-prefix">$</span>
-        <input type="number" id="tax_income" placeholder="0">
+        <input type="number" id="tax_income" value="20000" placeholder="0">
       </div>
 
       <label for="tax_parts">Parts / COGS this period</label>
       <div class="input-group">
         <span class="input-prefix">$</span>
-        <input type="number" id="tax_parts" placeholder="0">
+        <input type="number" id="tax_parts" value="1500" placeholder="0">
       </div>
 
       <label for="tax_expenses">Other business expenses</label>
       <div class="input-group">
         <span class="input-prefix">$</span>
-        <input type="number" id="tax_expenses" placeholder="0">
+        <input type="number" id="tax_expenses" value="500" placeholder="0">
       </div>
 
       <label for="tax_bracket">Estimated federal tax bracket</label>
@@ -328,28 +360,46 @@
       <button id="taxBtn">Calculate Tax Reserve</button>
 
       <div id="taxResult" class="result"></div>
+
+      <p class="section-divider">About This Tax Reserve Calculator</p>
+      <div class="calc-explainer">
+        <p>Self-employment tax catches a lot of shop owners off guard because it's stacked on top of regular income tax &mdash; you're paying both the employee and employer share of Social Security and Medicare. This calculator splits the two out so you can see exactly where the money is going.</p>
+        <p>The reason to reserve by pay period (weekly or monthly) rather than waiting until tax time is simple: the money already isn't yours the day you earn it. Moving your estimated reserve to a separate account the same day you deposit revenue keeps a good month from turning into an ugly April.</p>
+        <p>Parts and COGS reduce your taxable profit, which is why they're subtracted before the tax math runs &mdash; a shop with high parts volume and thin labor margin often owes less tax per dollar of revenue than a labor-heavy shop, even at the same top-line number.</p>
+        <p>This is a planning estimate, not a substitute for a tax professional who knows your entity type, state, and deductions. Think of it as a &ldquo;don't spend this&rdquo; flag, not a filed return.</p>
+      </div>
     </div>
 
     <div class="card" id="business-runway">
       <h2>Business Runway Calculator</h2>
       <p>See how many months your savings would cover you with no income.</p>
+      <p class="privacy-note">&#128274; Runs entirely in your browser &mdash; nothing you enter is sent or stored.</p>
+      <button type="button" class="clear-link" id="runway_clearBtn">Clear and enter your own numbers</button>
 
       <label for="savings">Total current savings</label>
       <p class="field-hint">The full amount you have saved right now &mdash; not a monthly figure.</p>
       <div class="input-group">
         <span class="input-prefix">$</span>
-        <input type="number" id="savings">
+        <input type="number" id="savings" value="30000">
       </div>
 
       <label for="monthlyExpenses">Average monthly personal expenses</label>
       <div class="input-group">
         <span class="input-prefix">$</span>
-        <input type="number" id="monthlyExpenses">
+        <input type="number" id="monthlyExpenses" value="12000">
       </div>
 
       <button id="runwayBtn">Calculate Runway</button>
 
       <div id="runwayResult" class="result"></div>
+
+      <p class="section-divider">About This Business Runway Calculator</p>
+      <div class="calc-explainer">
+        <p>Runway answers a simple but uncomfortable question: if the bays went quiet tomorrow, how long could you keep the doors open and pay yourself? Most shop owners have never actually run this number.</p>
+        <p>This calculator intentionally uses your personal savings and personal expenses, not the shop's bank account &mdash; the goal is to know how long you could hold on personally while you rebuild the schedule, not how long the business entity survives on paper.</p>
+        <p>Seasonal shops (heavy AC repair in summer, less traffic in winter, or vice versa depending on region) should run this calculation right before their historically slowest month, not right after a good one &mdash; that's when the real number matters.</p>
+        <p>A short runway isn't a reason to panic; it's a reason to build a small buffer intentionally, the same way you'd stock a slow-moving part before you actually need it.</p>
+      </div>
     </div>
 
     <div class="card lead-magnet">
@@ -401,7 +451,7 @@
       </script>
     </div>
 
-    <div class="cta">
+    <div class="cta" id="cta">
       <p class="cta-eyebrow">&#128295; AUTO SHOP CFO</p>
       <h2>Know which repairs make money, what you should charge, and where your shop is leaking profit.</h2>
       <p>The free tools above answer one question at a time. The paid workbook gives you ongoing control&mdash;every repair order, every month, in one place.</p>
